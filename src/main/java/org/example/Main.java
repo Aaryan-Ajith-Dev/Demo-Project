@@ -16,7 +16,7 @@ public class Main {
         System.out.println(
                 "1) Add 2 numbers\n" +
                         "2) Multiply 2 numbers\n" +
-                        "Choose (1 or 2): "
+                        "Choose either 1 or 2: "
         );
 
         try {
