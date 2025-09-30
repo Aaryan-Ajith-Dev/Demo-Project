@@ -1,34 +1,40 @@
 ---
 - name: Deploy Calculator App Locally
-  hosts: myhosts
+  hosts: localhost
   vars:
     docker_image: "a3ryn/calculator-app:latest"
     container_name: "calculator-app"
   tasks:
 
-    - name: Pull latest Docker image
-      docker_image:
-        name: "{{ docker_image }}"
-        source: pull
-
     - name: Stop existing container (if running)
-      docker_container:
+      community.docker.docker_container:
         name: "{{ container_name }}"
         state: stopped
       ignore_errors: yes
 
     - name: Remove old container
-      docker_container:
+      community.docker.docker_container:
         name: "{{ container_name }}"
         state: absent
       ignore_errors: yes
 
-    - name: Start container
-      docker_container:
+    - name: Start container interactively
+      community.docker.docker_container:
         name: "{{ container_name }}"
         image: "{{ docker_image }}"
         state: started
-        restart_policy: always
-        ports:
-          - "8081:8080"
-        detach: yes
+        pull: true
+        interactive: true
+        tty: true
+        restart_policy: no
+
+#    - name: Start container with latest image
+#      community.docker.docker_container:
+#        name: "{{ container_name }}"
+#        image: "{{ docker_image }}"
+#        state: started
+#        restart_policy: always
+#        pull: true
+#        ports:
+#          - "8081:8080"
+#        detach: yes
