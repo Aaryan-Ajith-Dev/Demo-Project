@@ -35,4 +35,5 @@ COPY --from=build /app/target/*.jar app.jar
 # Define the default command to run when the container starts.
 # Replace 'Main' with the actual fully qualified name of your main class if needed.
 # Since you have a standard 'Main' class, this command will run your application.
-ENTRYPOINT ["java", "-jar", "app.jar"]
+#ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar"]
