@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Test Working') {
+            steps {
+                sh 'echo "Hello from Jenkins File"'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn clean test'
