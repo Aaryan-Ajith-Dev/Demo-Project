@@ -17,7 +17,6 @@ COPY src /app/src
 
 # Run the full build command. This compiles the code and packages it into a JAR file.
 # The '-DskipTests' is often used in a Docker build, assuming your CI server
-# ran tests in a separate step, but you can remove it if you want tests to run here.
 RUN mvn package -DskipTests
 
 # -------------------- STAGE 2: CREATE THE FINAL, SMALL IMAGE --------------------
