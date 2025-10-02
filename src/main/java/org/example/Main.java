@@ -41,7 +41,7 @@ public class Main {
 
                     if (x < 0) {
                         System.out.println("Factorial is only defined for non-negative integers.");
-                    } else if (x > 12) {
+                    } else {
                         long result = calculatorService.fact(x);
                         System.out.println("Factorial Result: " + result);
                     }
