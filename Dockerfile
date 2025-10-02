@@ -29,10 +29,7 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /usr/local/lib/app
 
 # Copy the final compiled artifact (the JAR file) from the 'build' stage
-# This file is typically found in the 'target' directory after a successful Maven build.
 COPY --from=build /app/target/*.jar app.jar
 
 # Define the default command to run when the container starts.
-# Replace 'Main' with the actual fully qualified name of your main class if needed.
-# Since you have a standard 'Main' class, this command will run your application.
 ENTRYPOINT ["java", "-jar", "app.jar"]
