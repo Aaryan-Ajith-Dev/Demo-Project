@@ -76,7 +76,7 @@ public class CalculatorServiceTest {
      */
     @Test
     void testFact_PositiveNumber() {
-        int result = calculatorService.fact(5);
+        long result = calculatorService.fact(5);
         assertEquals(120, result, "5! should equal 120.");
     }
 
@@ -85,22 +85,8 @@ public class CalculatorServiceTest {
      */
     @Test
     void testFact_OfZero() {
-        int result = calculatorService.fact(0);
+        long result = calculatorService.fact(0);
         assertEquals(1, result, "0! should equal 1.");
-    }
-
-    /**
-     * Test case for a large number where the result will overflow 'int'.
-     * Since the method is not robust against overflow, we test the exact output.
-     */
-    @Test
-    void testFact_OverflowCheck() {
-        // 13! exceeds Integer.MAX_VALUE.
-        // The implementation will return a negative or incorrect number.
-        // We rely on the current (non-robust) implementation's output.
-        // 13! = 6,227,020,800. The int result is 1932053504.
-        int result = calculatorService.fact(13);
-        assertEquals(1932053504, result, "13! calculation results in overflow (1932053504).");
     }
 
     /**

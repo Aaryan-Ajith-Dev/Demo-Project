@@ -1,16 +1,10 @@
 package org.example.services;
 
 public class CalculatorService {
-    public int add(int a, int b) {
-        return a + b;
-    }
-    public int mult(int a, int b) {
-        return a * b;
-    }
     public double sqrt(double x) {
         return Math.sqrt(x);
     }
-    public int fact(int x) {
+    public long fact(long x) {
         assert x >= 0;
         if (x == 0) return 1;
         return x * fact(x - 1);
