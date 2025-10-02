@@ -42,11 +42,6 @@ public class Main {
                     if (x < 0) {
                         System.out.println("Factorial is only defined for non-negative integers.");
                     } else if (x > 12) {
-                        // 13! overflows a standard 32-bit int
-                        System.out.println("Warning: Factorial of " + x + " will overflow 'int' and give an incorrect result.");
-                        long result = calculatorService.fact(x);
-                        System.out.println("Factorial Result (Overflowed): " + result);
-                    } else {
                         long result = calculatorService.fact(x);
                         System.out.println("Factorial Result: " + result);
                     }
