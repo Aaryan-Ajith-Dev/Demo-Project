@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t calculator-app:latest .'
+                sh 'docker build -t a3ryn/calculator-app:latest .'
                 sh 'docker push a3ryn/calculator-app:latest'
             }
         }

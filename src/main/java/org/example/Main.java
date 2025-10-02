@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Available Operations:");
 
         // Display the streamlined menu
-        System.out.println(
+        System.out.print(
                 "1) Square Root (double)\n" +
                         "2) Factorial (int)\n" +
                         "3) Natural Log (double)\n" +
