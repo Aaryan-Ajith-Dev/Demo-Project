@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         CalculatorService calculatorService = new CalculatorService();
 
-        System.out.println("--- Advanced Math Function CLI ---");
+        System.out.println("--- Calculator CLI ---");
         System.out.println("Available Operations:");
 
         // Display the streamlined menu
