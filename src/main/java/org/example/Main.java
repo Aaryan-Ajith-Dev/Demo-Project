@@ -9,7 +9,7 @@ public class Main {
         // Create instances of the Scanner for input and the CalculatorService
         Scanner scanner = new Scanner(System.in);
         CalculatorService calculatorService = new CalculatorService();
-
+        // dummy trigger
         System.out.println("--- Calculator CLI ---");
         System.out.println("Available Operations:");
 
